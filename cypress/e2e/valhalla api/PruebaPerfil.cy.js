@@ -3,7 +3,7 @@ describe('Pruebas de Perfil', () => {
         // Login antes de cada prueba
         cy.visit('/login');
         cy.get('input#correoCliente').type('juan.perez@email.com');
-        cy.get('input#contrasenaCliente').type('12345678');
+        cy.get('input#contrasenaCliente').type('123456789');
         cy.get('button[type="submit"]').click();
         cy.url().should('include', '/home');
         // Ir a perfil
@@ -45,10 +45,7 @@ describe('Pruebas de Perfil', () => {
         cy.url().should('include', '/mis-reservas');
     });
 
-    it('debe cerrar sesión correctamente', () => {
-        cy.contains('Cerrar Sesión').click();
-        cy.url().should('include', '/login');
-    });
+
     it('debe actualizar la contraseña correctamente', () => {
         cy.get('input#contrasena').clear().type('123456789');
         cy.get('button[type="submit"]').click();

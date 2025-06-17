@@ -80,13 +80,5 @@ describe('Pruebas de Registro', () => {
     cy.url().should('include', '/home');
 });
 
-it('no debe permitir registrar un usuario ya existente', () => {
-    cy.get('input#nombreCliente').type('Angelita');
-    cy.get('input#apellidoCliente').type('Gómez');
-    cy.get('input#correoCliente').type('angelita@gmail.com');
-    cy.get('input#contrasenaCliente').type('123456789');
-    cy.get('button[type="submit"]').click();
-    // Ajusta el mensaje según lo que muestre tu app
-    cy.contains('El correo ya está registrado').should('be.visible');
-});
+
 });

@@ -1,8 +1,8 @@
 describe('Pruebas de Mis Reservas', () => {
     beforeEach(() => {
         cy.visit('/login');
-        cy.get('input#correoCliente').type('juan.perez@email.com');
-        cy.get('input#contrasenaCliente').type('12345678');
+        cy.get('input#correoCliente').type('marcanno@gmail.com');
+        cy.get('input#contrasenaCliente').type('123456789');
         cy.get('button[type="submit"]').click();
         cy.url().should('include', '/home');
         cy.contains('Mis Reservas').click();
